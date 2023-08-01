@@ -7,42 +7,41 @@ const Home: React.FC = () => {
     const stars = () => {
         let count = 50;
         let cenaRocket = document.querySelector('.cenaRocket');
-        let i = 0;
-        while (i < count) {
-            let star = document.createElement('i');
-            let x = Math.floor(Math.random() * window.innerWidth);
-
-
-            let duration = Math.random() * 1;
-            let h = Math.random() * 100;
-
-            if (star) {
-                star.style.left = x + 'px';
-                star.style.width = 1 + 'px';
-                star.style.height = 50 + h + 'px';
-                star.style.animationDuration = duration + 's';
-                if (cenaRocket) {
-                    cenaRocket.appendChild(star);
-                }
-
-            }
-            i++
+        if (cenaRocket) {
+            cenaRocket.classList.add('cenaRocket2');
         }
+
+        let i = 0;
+        setTimeout(() => {
+            while (i < count) {
+                let star = document.createElement('i');
+                let x = Math.floor(Math.random() * window.innerWidth);
+
+
+                let duration = Math.random() * 1;
+                let h = Math.random() * 100;
+
+                if (star) {
+                    star.style.left = x + 'px';
+                    star.style.width = 1 + 'px';
+                    star.style.height = 50 + h + 'px';
+                    star.style.animationDuration = duration + 's';
+                    if (cenaRocket) {
+                        cenaRocket.appendChild(star);
+                    }
+
+                }
+                i++
+            }
+        }, 2250)
     }
 
-
     useEffect(() => {
-        const data = document.querySelector('#containerRocket');
-        if (data) {
-            setTimeout(() => {
-                data.classList.add('cenaRocket')
-                stars();
-            }, 1000)
-        }
+        stars();
     }, [])
     return (
         <Homemain>
-            <div id="containerRocket" >
+            <div className="cenaRocket absolut" >
                 <div className='rocket'>
                     <img src={`${Rocket}`} alt="imagem de foquete" />
                 </div>

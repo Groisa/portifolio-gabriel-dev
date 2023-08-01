@@ -1,36 +1,51 @@
+.cenaRocket {
+    position: absolute;
+    top: -800px;
+    transition: all 2s;
+}
 
+.cenaRocket.cenaRocket2 {
+    
+    position: relative;
+    top: 0;
+}
 
 .cenaRocket .rocket {
-    position: relative;
+    position: relative !important;
     animation: animate 0.2s ease infinite;
     z-index: 999999;
-    
+    top: 0px;
+
 }
 
 @keyframes animate {
     0% {
         transform: translateY(-2px);
     }
+
     50% {
         transform: translateY(2px);
     }
 }
 
 .cenaRocket i {
-    position: absolute;
+    position: fixed;
     top: -250px;
-    background: rgba(255,255,255,0.5);
+    background: rgba(255, 255, 255, 0.5);
     animation: star linear infinite;
 }
+
 @keyframes star {
     0% {
         transform: translateY(0);
     }
+
     100% {
         transform: translateY(100vh);
     }
 }
-.cenaRocket .rocket::after{
+
+.cenaRocket .rocket::after {
     content: "";
     position: absolute;
     bottom: -200px;
