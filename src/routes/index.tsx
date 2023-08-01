@@ -7,6 +7,7 @@ import Home from '../pages/Home';
 // import { Container } from './styles';
 
 const RoutesApp: React.FC = () => {
+   
     return (
         <Routes>
             <Route path='/' element={<Home />} />
